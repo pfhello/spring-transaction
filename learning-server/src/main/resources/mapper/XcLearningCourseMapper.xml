@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.itcast.learning.mapper.XcLearningCourseMapper" >
+    <select id="findXcLearningCourseByUserIdAndCourseId" resultType="XcLearningCourse">
+        SELECT * FROM xc_learning_course WHERE user_id=#{userId} AND course_id=#{courseId}
+    </select>
+    
+    <insert id="addXcLearningCourse" parameterType="XcLearningCourse">
+        INSERT INTO xc_learning_course(id,user_id,course_id) VALUES (#{id},#{userId},#{courseId})
+    </insert>
+    
+    <update id="updateXcLearningCourse" parameterType="XcLearningCourse">
+        UPDATE xc_learning_course SET user_id=#{userId} AND course_id=#{courseId}
+    </update>
+</mapper>
